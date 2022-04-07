@@ -1,4 +1,4 @@
-.productDetails {
+/* .productDetails {
     background-color: rgb(214, 214, 214);
     width: 100vw;
     max-width: 100%;
@@ -274,10 +274,10 @@
   .reviewCardComment {
     font: 300 5vw cursive;
   }
-}
+} */
 
 
-/* .ProductDetails {
+ .ProductDetails {
   background-color: rgb(255, 255, 255);
   width: 100vw;
   max-width: 100%;
@@ -291,7 +291,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: center;
+  /* align-items: center; */
   padding: 2vmax;
   box-sizing: border-box;
   border: 1px solid white;
@@ -560,4 +560,4 @@
   .reviewCardComment {
     font: 300 5vw cursive;
   }
-} */
+} 

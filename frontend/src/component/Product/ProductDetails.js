@@ -3,7 +3,7 @@ import './ProductDetails.css';
 import Carousel from 'react-material-ui-carousel';
 import { useSelector, useDispatch } from "react-redux";
 import { clearErrors, getProductDetails, newReview } from '../../actions/productAction';
-import ReactStars from 'react-rating-stars-component';
+// import ReactStars from 'react-rating-stars-component';
 import ReviewCard from './ReviewCard.js';
 import Loader from '../layout/Loader/Loader';
 import { useAlert } from 'react-alert';
@@ -92,12 +92,12 @@ const ProductDetails = ({ match }) => {
             loading ? <Loader /> : (
                 <>
                     <MetaData title={`${product.name} of Ecommerce Site`} />
-                    <div className="productDetails">
+                    <div className="ProductDetails">
                         <div>
                             <Carousel>
                                 {product.images && product.images.map((item, i) => (
                                     <img
-                                        className="carouselImage"
+                                        className="CarouselImage"
                                         key={item.url}
                                         src={item.url}
                                         alt={`${i} Slide`}

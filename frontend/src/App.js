@@ -145,9 +145,11 @@ function App() {
         <Route exact path="/contact" component={Contact} />
 
         {/* bitore condition ta na dile switch er bitorer path gula baad e onno path dile NotFound page show korbe...kintu switch er baire path /process/payment jei ta ace oi ta likleo NotFound asbe kintu amader oi pathName e component ace tai keo jodi direct /process/payment likhe taile null asbe kintu product add kore buy korte gele tkn component ta load hobe  */}
-        <Route component={window.location.pathname === "/process/payment" ? null : NotFound} />
+        {/* <Route component={window.location.pathname === "/process/payment" ? null : NotFound} /> */}
+        <Route path="*" component={NotFound} />
 
       </Switch>
+
 
 
 
