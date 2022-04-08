@@ -19,7 +19,7 @@ export const addItemsToCart = (id, quantity) => async (dispatch, getState) => {
         },
     });
 
-    localStorage.setItem("cartItems", JSON.stringify(getState().cart.cartItems));
+    sessionStorage.setItem("cartItems", JSON.stringify(getState().cart.cartItems));
 
 };
 
@@ -31,7 +31,7 @@ export const removeCartItem = (id) => async (dispatch, getState) => {
         payload: id
     });
 
-    localStorage.setItem("cartItems", JSON.stringify(getState().cart.cartItems));
+    sessionStorage.setItem("cartItems", JSON.stringify(getState().cart.cartItems));
 
 };
 
@@ -43,5 +43,5 @@ export const saveShippinInfo = (data) => async (dispatch) => {
         payload: data
     });
 
-    localStorage.setItem("shippinInfo", JSON.stringify(data))
+    sessionStorage.setItem("shippinInfo", JSON.stringify(data))
 };

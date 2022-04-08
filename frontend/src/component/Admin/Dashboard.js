@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getAdminProduct } from '../../actions/productAction.js';
 import { getAllOrders } from '../../actions/orderAction.js';
 import { getAllUsers } from '../../actions/userAction.js';
-// import { Doughnut, Line } from 'react-chartjs-2';
+import { Doughnut, Line } from 'react-chartjs-2';
 
 
 
@@ -35,28 +35,28 @@ const Dashboard = () => {
     ));
 
 
-    // const lineState = {
-    //     labels: ["Initial Amount", "Amount Earned"],
-    //     datasets: [
-    //         {
-    //             label: "TOTAL AMOUNT",
-    //             backgroundColor: ["tomato"],
-    //             hoverBackgroundColor: ["rgb(197, 72, 49)"],
-    //             data: [0, totalAmount],
-    //         },
-    //     ],
-    // };
-    // const doughnutState = {
-    //     labels: ["Out Of Stock", "In Stock"],
-    //     datasets: [
-    //         {
-    //             label: "TOTAL AMOUNT",
-    //             backgroundColor: ["#00A684","#680084"],
-    //             hoverBackgroundColor: ["rgb(197, 72, 49)"],
-    //             data: [outOfStock, products.length - outOfStock],
-    //         },
-    //     ],
-    // };
+    const lineState = {
+        labels: ["Initial Amount", "Amount Earned"],
+        datasets: [
+            {
+                label: "TOTAL AMOUNT",
+                backgroundColor: ["tomato"],
+                hoverBackgroundColor: ["rgb(197, 72, 49)"],
+                data: [0, totalAmount],
+            },
+        ],
+    };
+    const doughnutState = {
+        labels: ["Out Of Stock", "In Stock"],
+        datasets: [
+            {
+                label: "TOTAL AMOUNT",
+                backgroundColor: ["#00A684","#680084"],
+                hoverBackgroundColor: ["rgb(197, 72, 49)"],
+                data: [outOfStock, products.length - outOfStock],
+            },
+        ],
+    };
 
 
 
@@ -87,12 +87,12 @@ const Dashboard = () => {
                         </Link>
                     </div>
                 </div>
-                {/* <div className="lineChart">
+                <div className="lineChart">
                     <Line data={lineState} />
-                </div> */}
-                {/* <div className="doughnutChart">
+                </div>
+                <div className="doughnutChart">
                     <Doughnut data={doughnutState} />
-                </div> */}
+                </div>
             </div>
         </div>
     );
