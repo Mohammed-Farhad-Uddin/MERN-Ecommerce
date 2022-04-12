@@ -1,10 +1,10 @@
 const app = require('./app');
-const dotenv = require('dotenv');
+// const dotenv = require('dotenv');
 const connectDatabase = require('./config/database');
 const cloudinary = require("cloudinary");
 
 //ei excepton upore korte hoi
-//Handle uncaught exceptions //examole=console.log(youtube) ei ta handle uncaught exception
+//Handle uncaught exceptions //example=console.log(youtube) ei ta handle uncaught exception
 process.on('uncaughtException', (err) => {
     console.log(`Error: ${err.message}`);
     console.log("Shutting down the server due to uncaught exceptions");
@@ -14,7 +14,9 @@ process.on('uncaughtException', (err) => {
 
 
 // config
-dotenv.config({ path: "backend/config/config.env" });
+if (process.env.NODE_ENV !== 'PRODUCTION') {//heroku te deploy korle eitar dotenv er property gula oi kane takbe tai er tar kono kaj nai. ei ta tkni kaj korbe jkn heroku chara locally use korle tkn dotenv file ta lagbe,,tai ei condition dewa hoice
+    require('dotenv').config({ path: "backend/config/config.env" });
+}
 
 //connectiong to database
 connectDatabase();
